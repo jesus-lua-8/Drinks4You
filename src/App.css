@@ -1,38 +1,220 @@
-.App {
-  text-align: center;
+:root{
+    --text-primary:#000;
+    --bgPrimary:rgb(151, 19, 19);
+   --bgSecondary: #ce0303;
+   --pink: #c40a0a;
+   --light-blue: #062838;
+   --border: #c20a0a;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+a:hover{
+    color: var(--pink) !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.app{
+    display: flex;
+    overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar{
+    flex: 0.2;
+    background-color: rgba(141, 63, 0);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main{
+    flex: 0.8;
+    width: 100%;
+}
+.routes{
+    padding: 20px;
+}
+.nav-container{
+    position: fixed;
+    left: 0;
+    margin: 10px;
+    height: 100vh;
+    margin: 0px;
+    width: 20%;
+    background-color: rgb(141, 63, 0);
+}
+
+.logo-container{
+    background-color: rgb(141, 63, 0);
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    width: 100%;
+}
+
+.logo{
+    margin:0 0 0 15px;
+}
+
+.logo a{
+    color: rgb(167, 29, 29);
+ }
+
+.menu-control-container{
+    display: none !important;
+    position: absolute !important;
+    right: 10px !important;
+    top: 25px !important;
+    font-size: 1.2rem !important;
+    background-color: var(--bgSecondary) !important;
+    border: none !important;
+}
+
+@media screen and (max-width:1300px){
+    .main{
+        margin-left: 50px;
+    }
+}
+
+@media screen and (max-width:1170px){
+    .main{
+        margin-left: 50px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .main{
+        margin-left: 100px;
+    }
+}
+
+@media screen and (max-width:800px){
+    .app{
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .navbar{
+        flex: 1;
+    }
+
+    .main{
+        flex: 1;
+        margin-top: 90px;
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+
+    .nav-container{
+        height: 8vh;
+        position:fixed;
+        width: 100%;
+        z-index: 100;
+        background-color: var(--bgSecondary);
+    }
+  
+    .menu-control-container{
+        display: block !important;
+    }
+
+    .ant-menu{
+        position: absolute;
+        right: 0px;
+    }
+    .home-title{
+        font-size: 1.4rem !important;
+    }
+}
+
+.cocktail-card-container{
+    min-height: 65vh !important;
+}
+
+.cocktail-card{
+    min-width: 250px;
+}
+
+.recipe-card{
+    min-width: 250px;
+    min-height: 50vh;
+}
+
+.cocktail-card .cocktail-image .recipe-card{
+    position: center !important;
+}
+
+.site-card-wrapper{
+    position: center;
+    background-color: #EE591C;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23d24100' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: auto;
+}
+
+.card-ingredientList{
+    color: #722ed1;
+}
+
+.recipe-details{
+    background-color: transparent;
+padding: 12.84rem 0.69rem;
+padding-top: 20px;
+padding-bottom: 20px;
+display: flex;
+-moz-box-align: center;
+align-items: center;
+-moz-box-pack: center;
+justify-content: center;
+flex-direction: column;
+min-height: 10%;
+position: relative;
+}
+
+.step-title{
+    padding: 60px;
+    text-align: center;
+    color: rgb(141, 63, 0);
+    font-size: 30px;
+}
+
+.home-favorite-drink, .home-favorite-recipe{
+    background-color: transparent;
+padding: 12.84rem 0.69rem;
+display: flex;
+-moz-box-align: center;
+align-items: center;
+-moz-box-pack: center;
+justify-content: center;
+flex-direction: column;
+min-height: 10%;
+position: relative;
+}
+
+.home-favoite-drink-description{
+    font-size: 20px;
+    font-family: Apple Chancery, cursive;
+    color: white;
+}
+
+.home-header-one, .home-heading-two{
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+.home-favorite-drink, .home-favorite-recipe{
+    background-color: rgb(141, 63, 0);
+}
+
+.home-favorite-drink-tab{
+    background-image: url('./images/cocktail-background.jpg');
+}
+
+.footer {
+    background-color:rgb(141, 63, 0);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
 }
